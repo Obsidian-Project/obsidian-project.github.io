@@ -1,0 +1,83 @@
+---
+# Use a comment to ensure Jekyll reads the file to be transformed into CSS later
+# only main files contain this front matter, not partials.
+---
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500');
+@import 'bootstrap';
+
+body{
+    font-family: 'Poppins', sans-serif;  
+    font-weight: 100; 
+    color: white;
+    
+    .navigation {
+        display: flex;
+        height: 8vh;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+        a {
+            color: #7CB91F;
+            
+            &.navigation-brand {
+                font-size: 2.5em;
+            }
+            &:hover{
+                text-decoration: none;
+                opacity: 0.8;
+            }
+        }
+
+        .navigation-right {
+            float: right;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            ul { display: inline-flex;
+                margin: 0;
+                li {
+                    margin: 1em;
+                }
+            }
+            
+        }
+    } 
+    section {
+        height: 80vh;
+        .text-container{
+           
+            padding: 3em 6em;
+            h1{
+                text-shadow: 0.5px 0.5px #303030; 
+                margin: 0.5em 0;
+            }
+            h4{
+                font-weight: 100;
+                color: #5D576B;
+                margin: 1em 0;
+               
+            }
+        }
+        &.home {
+            background: url("/assets/home-image.jpeg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+
+    .btn-obsidian {
+        color: #fff;
+        background-color: #5D576B;
+        border-color: #5D576B;
+        border-radius: 0;
+        padding: 0.3em 2em;
+        font-size: 1.2em;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    button:focus {outline:0;}    
+}
+
+$btn-default-color: #5D576B;
