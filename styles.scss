@@ -9,6 +9,7 @@
 $secondary-color: #5D576B;
 $primary-color: #7CB91F;
 $button-background-color: #5D576B;
+$height-larger-than-desktop    : "max-height: 800px" !default;
 
 body {
     font-family: 'Poppins', sans-serif;  
@@ -17,19 +18,11 @@ body {
     min-width: 300px;
 }
 
-// Headers
-// h1 {
-//     font-size: 3rem;
-// }
-// h4 {
-//     font-size: 2rem;
-// }
 section {
     height: 60vh;
     .text-container{           
-        padding-top: 2rem;// 6em; cambia
+        padding-top: 2rem;
         h1{
-            //text-shadow: 0.5px 0.5px #303030; 
             color: $secondary-color;
             margin-bottom: 2rem;
             font-size: 2.8rem;
@@ -52,9 +45,9 @@ section {
     a {
         color: $primary-color;
         text-decoration: none;
-        font-size: 1.2rem;//cambia
+        font-size: 1.2rem;
         &.navigation-brand {
-            font-size: 2.2rem;//cambia
+            font-size: 2.2rem;
         }
         &:hover{
             text-decoration: none;
@@ -100,12 +93,104 @@ button:focus {
 
 @media (#{$bp-larger-than-phablet}) {
     body {    
-        font-size: 32px;
-        color: white;        
+        font-size: 24px;   
+    }
+    .container {
+        width: 100%;
+    }
+    .navigation { 
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+    section {
+        height: 80vh;
+        font-size: 24px;   
+        .text-container {      
+            font-size: 24px;   
+            padding: 3rem 6rem;            
+            h1 {
+                color: white;
+                text-shadow: 0.5px 0.5px #303030; 
+                
+            }
+            h4 {
+                color: $secondary-color;
+                font-size: 1.5rem;
+            }
+        }
+        &.home {           
+            background: url("/assets/home-image.jpeg");        
+            background-repeat: no-repeat;
+            background-size: 100% 80%;  
+        }
+    }
+    .btn-obsidian {
+        font-size: 1.5rem;
+    }
+}
+
+@media (#{$bp-larger-than-tablet}){
+    
+        section {
+            height: 80vh;   
+            .text-container {      
+                width: 60%;
+                padding: 3rem 6rem;            
+                h1 {
+                    color: white;
+                    text-shadow: 0.5px 0.5px #303030; 
+                    
+                }
+                h4 {
+                    color: $secondary-color;
+                    font-size: 1.5rem;
+                }
+            }
+            &.home {           
+                background: url("/assets/home-image.jpeg");        
+                background-repeat: no-repeat;
+                background-size: 100% 90%;  
+            }
+        }
     }
 
+// @media (#{$bp-larger-than-tablet}) and (#{$height-larger-than-desktop  }) {
+
+//     section {
+//         height: 80vh;   
+//         &.home {           
+//             background: url("/assets/home-image.jpeg");        
+//             background-repeat: no-repeat;
+//             background-size: 100% 90%;  
+//         }
+//     }
+// }
+
+@media (#{$bp-larger-than-desktop  }) {
+    .navigation {        
+        a {
+            font-size: 1.4rem;
+            &.navigation-brand {
+                font-size: 3rem;
+            }            
+        }
+    }
     section {
-        height: 70vh;
+        height: 80vh;   
+        .text-container {      
+            padding: 3rem 6rem;    
+            width: 60%;        
+            h1 {
+                color: white;
+                text-shadow: 0.5px 0.5px #303030; 
+                font-size: 4rem;
+                
+            }
+            h4 {
+                color: $secondary-color;
+                font-size: 2rem;
+            }
+        }
         &.home {           
             background: url("/assets/home-image.jpeg");        
             background-repeat: no-repeat;
@@ -113,3 +198,17 @@ button:focus {
         }
     }
 }
+
+// @media (#{$bp-larger-than-desktop  }) and (#{$height-larger-than-desktop  }) {
+//     section {
+//         height: 80vh;           
+//         &.home {           
+//             background: url("/assets/home-image.jpeg");        
+//             background-repeat: no-repeat;
+//             background-size: 100% 100%;  
+//         }
+//     }
+// }
+
+//navigation font sizes
+//button font size and paddings
