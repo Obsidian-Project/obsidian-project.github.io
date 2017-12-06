@@ -4,80 +4,112 @@
 ---
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500');
-@import 'bootstrap';
+@import 'skeleton';
 
-body{
+$secondary-color: #5D576B;
+$primary-color: #7CB91F;
+$button-background-color: #5D576B;
+
+body {
     font-family: 'Poppins', sans-serif;  
     font-weight: 100; 
-    color: white;
-    
-    .navigation {
-        display: flex;
-        height: 8vh;
-        align-items: center;
-        align-content: center;
-        justify-content: space-between;
-        a {
-            color: #7CB91F;
-            
-            &.navigation-brand {
-                font-size: 2.5em;
-            }
-            &:hover{
-                text-decoration: none;
-                opacity: 0.8;
-            }
-        }
+    font-size: 16px;    
+    min-width: 300px;
+}
 
-        .navigation-right {
-            float: right;
-            display: flex;
-            align-items: center;
-            align-content: center;
-            ul { display: inline-flex;
-                margin: 0;
-                li {
-                    margin: 1em;
-                }
-            }
+// Headers
+// h1 {
+//     font-size: 3rem;
+// }
+// h4 {
+//     font-size: 2rem;
+// }
+section {
+    height: 60vh;
+    .text-container{           
+        padding-top: 2rem;// 6em; cambia
+        h1{
+            //text-shadow: 0.5px 0.5px #303030; 
+            color: $secondary-color;
+            margin-bottom: 2rem;
+            font-size: 2.8rem;
+        }
+        h4{
             
-        }
-    } 
-    section {
-        height: 80vh;
-        .text-container{
-           
-            padding: 3em 6em;
-            h1{
-                text-shadow: 0.5px 0.5px #303030; 
-                margin: 0.5em 0;
-            }
-            h4{
-                font-weight: 100;
-                color: #5D576B;
-                margin: 1em 0;
-               
-            }
-        }
-        &.home {
-            background: url("/assets/home-image.jpeg");
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
+            color: $primary-color; //cambia
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
         }
     }
+}
 
-    .btn-obsidian {
-        color: #fff;
-        background-color: #5D576B;
-        border-color: #5D576B;
-        border-radius: 0;
-        padding: 0.3em 2em;
-        font-size: 1.2em;
-        &:hover {
+.navigation {
+    display: flex;
+    height: 6vh; //cambia
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    a {
+        color: $primary-color;
+        text-decoration: none;
+        font-size: 1.2rem;//cambia
+        &.navigation-brand {
+            font-size: 2.2rem;//cambia
+        }
+        &:hover{
+            text-decoration: none;
             opacity: 0.8;
         }
     }
-    button:focus {outline:0;}    
-}
 
-$btn-default-color: #5D576B;
+    .navigation-right {
+        float: right;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        ul { 
+            display: inline-flex;
+            list-style: none;
+            margin: 0;
+            li {
+                margin: 1rem;
+            }
+        }        
+    }
+} 
+
+// Button
+.btn-obsidian {
+    color: #fff;
+    background-color:$secondary-color;
+    border-color: $secondary-color;
+    border-radius: 0;
+    font-size: 1.5rem;
+    font-weight: 100;    
+    &:hover {
+        opacity: 0.8;
+    }
+}
+// Reset
+a:focus {
+    outline:0;
+} 
+button:focus {
+    outline:0;
+}    
+
+@media (#{$bp-larger-than-phablet}) {
+    body {    
+        font-size: 32px;
+        color: white;        
+    }
+
+    section {
+        height: 70vh;
+        &.home {           
+            background: url("/assets/home-image.jpeg");        
+            background-repeat: no-repeat;
+            background-size: 100% 100%;  
+        }
+    }
+}

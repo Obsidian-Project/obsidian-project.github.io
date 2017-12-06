@@ -5,37 +5,43 @@
 
 <body>
     <div class="container">
-        <nav class="navigation" role="navigation">            
-            <div class="navigation-header">                
-                <a class="navigation-brand" href="/">{{ site.title }}</a>
-            </div>
+        <div class="row">
+            <div class="twelve columns">
+                <nav class="navigation">
+                    <div class="navigation-header">
+                        <a class="navigation-brand" href="/">{{ site.title }}</a>
+                    </div>
 
-            <div class="navigation-right">
-                <ul>
-                    <li>
-                        <a href="/">WhitePaper</a>
-                    </li>
-                    <li>
-                        <a href="/">Blog</a>
-                    </li>
-                    <li>
-                        <a href="/">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    
-        <main>
-            {{ content }}
-        </main>
+                    <div class="navigation-right">
+                        <ul>
+                            <li>
+                                <a href="/">WhitePaper</a>
+                            </li>
+                            <li>
+                                <a href="/">Blog</a>
+                            </li>
+                            <li>
+                                <a href="/">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
 
-        <footer>
+                <main>
+                    {{ content }}
+                </main>
+
+            </div>
+        </div>
+
+
+        <!-- <footer>
             <span>
                 &copy;
                 <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> {{ site.author.name }}.
             </span>
-
-        </footer>
+        </footer> -->
+        
     </div>
 </body>
 
