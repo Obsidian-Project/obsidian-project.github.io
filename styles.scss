@@ -3,7 +3,7 @@
 # only main files contain this front matter, not partials.
 ---
 
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,700');
 @import 'skeleton';
 
 $secondary-color: #5D576B;
@@ -25,7 +25,7 @@ body {
     justify-content: space-around;
     align-items: stretch;
 }
-.navigation, h1, h2, h3, h4, section {
+.navigation, h1, h2, h3, h4, h5, section {
     margin-bottom: 2rem;
     letter-spacing: normal; 
 }
@@ -39,24 +39,28 @@ h2 {
     font-size: 1.8rem; 
 }
 h3 {
-    font-size: 1.6rem; 
+    font-size: 1.6rem;  
 }
-h4 {            
-    color: $primary-color;            
+h4 {                      
     font-size: 1.2rem;                       
 }
 h5 {
     font-size: 1.2rem;
+    color: $primary-color;      
 }
 p {
     font-size: 1.2rem;
     margin: 0;
     padding: 1rem 0;
+    font-weight: 100;
 }
 hr {
-    margin: 0;
+    margin: 2rem 0;
 }
 footer {  
+    h2 {
+        margin-bottom: 0;
+    }
     .copyright {          
         display: flex;
         align-content: center;
@@ -106,8 +110,13 @@ footer {
         }        
     }
 } 
-
-section, footer {            
+.about .image-container img {
+    width: 20rem;    
+}
+section, footer {       
+    &.content {
+        margin-bottom: 0;
+    }     
     .text-container{           
         &.padding-top-zero {
             padding-top: 0;
@@ -131,12 +140,23 @@ section, footer {
             font-weight: bold;
         }
     }
+    &.about {
+        .text-container { 
+            h5 {
+                margin: 1rem 0;
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 // Button
 .btn-obsidian {
     padding: 0.6rem 1rem;
     height: auto;
+    text-decoration: none;
     line-height: normal;
     color: #fff;
     background-color:$secondary-color;
@@ -144,6 +164,7 @@ section, footer {
     border-radius: 0;
     font-size: 1rem;
     font-weight: 100;    
+    text-transform: uppercase;
     &:hover {
         opacity: 0.8;
         color: #fff;
@@ -171,6 +192,9 @@ button:focus {
     .navigation, h2 {
         margin-bottom: 0;
     }
+    hr {
+        margin: 1rem 0 0 0;
+    }
      .container {
          width: 100%;
      }
@@ -187,6 +211,34 @@ button:focus {
             flex-flow: row wrap;
             align-items: center;
             align-content: space-around;
+        }
+        &.about {
+            height: auto;
+            margin-bottom: 0;
+            .text-container {
+                padding-bottom: 0;
+                padding-top: 1rem;
+                h1 {
+                    color: $secondary-color;    
+                    text-shadow: none;            
+                }
+                h2, h5 {
+                    margin-bottom: 1rem;
+                }
+                p{
+                    font-size: 1rem;
+                    padding-top: 0.5rem;                    
+                }
+            }
+            .image-container {
+                display: flex;
+                align-content: center;
+                align-items: center;
+                justify-content: center;                
+                img {
+                    width: 22rem;
+                }
+            }
         }
         .text-container {    
             width: 60%;  
