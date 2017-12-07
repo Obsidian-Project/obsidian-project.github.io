@@ -19,7 +19,12 @@ body {
     min-width: 400px;
     text-align: center;
 }
-
+.container, main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+}
 .navigation, h1, h2, h3, h4, section {
     margin-bottom: 2rem;
     letter-spacing: normal; 
@@ -45,8 +50,24 @@ h5 {
 }
 p {
     font-size: 1.2rem;
+    margin: 0;
+    padding: 1rem 0;
 }
-
+hr {
+    margin: 0;
+}
+footer {  
+    .copyright {          
+        display: flex;
+        align-content: center;
+        align-items: center;
+        height: 6vh;        
+        p { 
+            font-size: 0.8rem; 
+            margin: auto;
+        }
+    }
+}
 .navigation {
     display: flex;
     height: 6vh;
@@ -62,7 +83,7 @@ p {
         }
         &:hover{
             text-decoration: none;
-            opacity: 0.8;
+            opacity: 0.8;            
         }
     }
     .navigation-right {        
@@ -86,19 +107,23 @@ p {
     }
 } 
 
-section {    
+section, footer {            
     .text-container{           
-        &.padding-top-zero{
+        &.padding-top-zero {
             padding-top: 0;
         }
+        &.padding-zero {
+            padding: 0;
+        }
     }
-   
+    .business-case {
+        margin-top: 2rem;
+    }    
     .goal, .business-case {
         display: flex;
         flex-direction: column;
         align-content: center;
         align-items: center;
-        margin-top: 5rem;
         img{
             margin: auto;
         }
@@ -121,6 +146,8 @@ section {
     font-weight: 100;    
     &:hover {
         opacity: 0.8;
+        color: #fff;
+        cursor: pointer;
     }
 }
 // Reset
@@ -131,121 +158,104 @@ button:focus {
     outline:0;
 }    
 
-// @media (#{$bp-larger-than-phablet}) {
-//     body {    
-//         font-size: 24px;   
-//     }
-//     .container {
-//         width: 100%;
-//     }
-//     .navigation { 
-//         padding-left: 8rem;
-//         padding-right: 8rem;
-//     }
-//     section {
-//         height: 80vh;
-//         font-size: 24px;   
-//         .text-container {      
-//             font-size: 24px;   
-//             padding: 3rem 8rem;            
-//             h1 {
-//                 color: white;
-//                 text-shadow: 0.5px 0.5px #303030; 
+@media (#{$bp-larger-than-phablet}) {
+    html {
+        font-size: 18px;        
+    }
+    body { 
+        text-align: left;
+    }    
+    h1, h2, h3, h4, section {
+        margin-bottom: 1rem;
+    }
+    .navigation, h2 {
+        margin-bottom: 0;
+    }
+     .container {
+         width: 100%;
+     }
+    .navigation { 
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    section {
+        height: 75vh;        
+    }
+    section, footer {
+        &.content {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            align-content: space-around;
+        }
+        .text-container {    
+            width: 60%;  
+            padding: 2rem 4rem;            
+            &.padding-zero {
+                padding: 0;
+            }
+            h1 {
+                color: white;
+                text-shadow: 0.5px 0.5px #303030; 
                 
-//             }
-//             h4 {
-//                 color: $secondary-color;
-//                 font-size: 1.5rem;
-//             }
-//         }
-//         &.home {           
-//             background: url("/assets/home-image.jpeg");        
-//             background-repeat: no-repeat;
-//             background-size: 100% 80%;  
-//         }
-//     }
-//     .btn-obsidian {
-//         font-size: 1.5rem;
-//     }
-// }
+            }
+            h4 {
+                color: $secondary-color;                
+            }
+        }
+        &.home {           
+            background: url("/assets/home-image.jpeg");        
+            background-repeat: no-repeat;
+            background-size: 100% 100%;  
+            background-color: white;
+        }    
+        .business-case {
+            margin-top: 0;
+        }
+        .goal, .business-case {
+            display: block;
+            width: 100%;
+            padding-left: 4rem;           
+            img{
+                float: right;
+                margin-right: 4rem;
+            }
+            span{
+                font-weight: bold;
+            }            
+        }
+    }
+    .btn-obsidian {
+        padding: 0.4rem 1rem;
+    }
+}
 
-// @media (#{$bp-larger-than-tablet}){
-    
-//         section {
-//             height: 80vh;   
-//             .text-container {      
-//                 width: 60%;      
-//                 h1 {
-//                     color: white;
-//                     text-shadow: 0.5px 0.5px #303030; 
-                    
-//                 }
-//                 h4 {
-//                     color: $secondary-color;
-//                     font-size: 1.5rem;
-//                 }
-//             }
-//             &.home {           
-//                 background: url("/assets/home-image.jpeg");        
-//                 background-repeat: no-repeat;
-//                 background-size: 100% 90%;  
-//             }
-//         }
-//     }
+@media (#{$bp-larger-than-tablet}){
+        html{
+            font-size: 17px;
+        }            
+        section {
+             .text-container {      
+                 width: 50%;          
+            }
+            img {
+                width: 12rem;
+            }
+        }
+}
 
-
-// @media (#{$bp-larger-than-desktop  }) {
-//     .navigation {        
-//         a {
-//             font-size: 1.4rem;
-//             &.navigation-brand {
-//                 font-size: 3rem;
-//             }            
-//         }
-//     }
-//     section {
-//         height: 80vh;   
-//         .text-container {      
-//             width: 60%;        
-//             h1 {
-//                 color: white;
-//                 text-shadow: 0.5px 0.5px #303030; 
-//                 font-size: 4rem;
-                
-//             }
-//             h4 {
-//                 color: $secondary-color;
-//                 font-size: 2rem;
-//             }
-//         }
-//         &.home {           
-//             background: url("/assets/home-image.jpeg");        
-//             background-repeat: no-repeat;
-//             background-size: 100% 100%;  
-//         }
-//     }
-// }
-// @media (#{$bp-larger-than-desktophd  }) {
-//     section {
-//         .text-container {       
-//         width: 50%;        
-//         h1 {
-//             color: white;
-//             text-shadow: 0.5px 0.5px #303030; 
-//             font-size: 3.5rem;
-            
-//         }
-//         h2 {
-//             color: $primary-color;      
-//             font-size: 3.5rem; 
-//         }
-//         p {
-//             font-size: 2rem;
-//         }
-//         h4 {
-//             color: $secondary-color;
-//             font-size: 2.5rem;
-//         }
-//     }
-// }
-// }
+@media (#{$bp-larger-than-desktop  }) {
+    html {
+        font-size: 18px;
+    }
+}
+@media (#{$bp-larger-than-desktophd  }) {
+    html {
+        font-size: 22px;
+    }
+    section {
+        .text-container {       
+            width: 50%; 
+        }
+    }
+}
