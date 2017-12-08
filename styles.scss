@@ -16,16 +16,9 @@ html {
     font-weight: 100;
 }
 body {      
-    min-width: 400px;
     text-align: center;
 }
-.container, main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: stretch;
-}
-.navigation, h1, h2, h3, h4, h5, section {
+h1, h2, h3, h4, h5 {
     margin-bottom: 2rem;
     letter-spacing: normal; 
 }
@@ -36,52 +29,61 @@ h1 {
 }
 h2 {
     color: $primary-color;      
-    font-size: 1.8rem; 
+    font-size: 1.6rem; 
 }
 h3 {
-    font-size: 1.6rem;  
+    font-size: 1.4rem;  
 }
 h4 {                      
     font-size: 1.2rem;    
     &.subtitle {
-        margin-bottom: 0.5rem;
         color: $secondary-color;  
     }                   
 }
 h5 {
-    font-size: 1.2rem;
-    color: $primary-color;      
+    font-size: 1rem;
+    color: $primary-color;          
 }
 p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0;
-    padding: 0.5rem 0;
+    padding: 0;
     font-weight: 100;
-    font-family: sans-serif;
+    font-family: sans-serif;    
+    &.withPadding {
+        padding-top: 0.5rem;   
+    }
 }
 hr {
-    margin: 2rem 0;
+    padding: 0;
+    margin: 0;
 }
 footer {  
-    h2 {
-        margin-bottom: 0;
+    .text-container {
+        padding-top: 2rem;
+        p {
+            margin-bottom: 2rem;
+        }   
     }
     .copyright {          
         display: flex;
         align-content: center;
         align-items: center;
         height: 6vh;        
+        margin-top: 2rem;
         p { 
             font-size: 0.8rem; 
-            margin: auto;
+            margin: auto;           
         }
     }
+    
 }
 .navigation {
     display: flex;
     height: 6vh;
     align-items: center;
     align-content: center;
+    margin-bottom: 2rem;
     justify-content: space-between;
     a {
         color: $primary-color;
@@ -115,53 +117,43 @@ footer {
         }        
     }
 } 
-.about, .business-page {
-     .image-container img {
-        width: 20rem;    
-     }
-}
-section, footer {       
-    &.content {
-        margin-bottom: 1rem;
-    }     
-    .text-container{           
-        &.padding-top-zero {
-            padding-top: 0;
-        }
-        &.padding-zero {
-            padding: 0;
-        }
-    }
-    .business-case {
-        margin-top: 2rem;
-    }    
-    .goal, .business-case {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        align-items: center;
-        img{
-            margin: auto;
-        }
-        span{
-            font-weight: bold;
-        }
-    }
+
+section {         
+    margin-bottom: 2rem;  
     &.about, &.business-page {
-        .text-container { 
-            h5 {
-                margin: 1rem 0;
+        .image-container {
+            img{
+                width: 20rem;    
+                margin-top:2rem;
+            }           
+        }
+        h5 {
+            margin-top: 2rem;
+        }
+   }
+   &.content {
+       .text-container { 
+           p {
+               margin: 2rem 0;
             }
         }
-        &:last-child {
-            margin-bottom: 0rem;
+
+        .goal, .business-case {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            img{
+                margin: auto;
+            }
+            span{
+                font-weight: bold;
+            }
         }
-    }
-    &.business-page {
-        &:last-child {
-            margin-bottom: 1rem;
+        h2.margin20{
+            margin-top: 2rem;
         }
-    }
+   }       
 }
 
 // Button
@@ -177,7 +169,7 @@ section, footer {
     font-size: 1rem;
     font-weight: 100;    
     font-family: sans-serif;
-    //text-transform: uppercase;
+    display: inline-block;
     &:hover {
         opacity: 0.8;
         color: #fff;
@@ -203,115 +195,131 @@ button:focus {
     body { 
         text-align: left;
     }    
-    h1, h2, h3, h4, section {
-        margin-bottom: 1rem;
-    }
-    .navigation, h2 {
-        margin-bottom: 0;
-    }
-    hr {
-        margin: 1rem 0 0 0;
+    h3, h5 {
+       margin-bottom: 1rem;       
+    }    
+    p.withPadding {
+        padding-top: 1rem;
     }
      .container {
          width: 90%;
      }
     .navigation { 
+        margin-bottom: 0;
         padding-left: 4rem;
         padding-right: 4rem;
-    }
+    }     
+    .text-container {    
+        width: 60%;               
+        padding: 0 4rem;        
+        h1 {
+            color: white;
+            text-shadow: 0.5px 0.5px #303030;             
+        }
+        h4 {
+            color: $secondary-color;                
+        }
+    }    
     section {
         height: 75vh;
         display: flex;
-        align-content: space-between;        
-    }
-    section, footer {
+        flex-direction: row;
+        align-content: space-between;
         &.content {
             display: flex;
-            flex-flow: row wrap;
-            align-items: center;
-            align-content: space-around;
+            flex-direction: column;
+            align-content: space-between;
+            align-items: stretch;
+            .goal, .business-case {
+                display: block;
+                width: 100%;
+                padding-left: 4rem;    
+                margin-top: 1rem;                 
+                img{
+                    float: right;
+                    margin-right: 8rem;
+                }
+                span{
+                    font-weight: bold;
+                }               
+                .text-container {
+                    padding: 0;
+                }   
+                h2{
+                    display: inline;
+                }
+                p{
+                    margin: 1rem 0;
+                }
+            }   
+            .business-case {
+                margin-top: 4rem;
+            }
         }        
         &.about, &.business-page {
-            height: auto;
-         //   margin-bottom: 0;
-            .text-container {
-                &.padding20 {
+            height: auto;            
+            &:first-child {
+                .text-container {
                     padding-top: 2rem;
-                }
-                padding-bottom: 0;
-                padding-top: 1rem;
+                }    
+            }
+            .text-container {    
+                padding-top: 0;              
                 h1 {
                     color: $secondary-color;    
                     text-shadow: none;            
                 }
-                h2, h5 {
-                    margin-bottom: 1rem;
+                h2 {
+                    margin-bottom: 2rem;
                 }
-                p{
-                    font-size: 1rem;
-                    padding-top: 0.5rem;                    
-                }
+                h5 {
+                    margin-top: 1rem;
+                }                
             }
             .image-container {
                 display: flex;
                 align-content: center;
                 align-items: center;
-                justify-content: center;                
+                justify-content: center;                                
+            }
+            .highlight {
+                display: block;
+                margin-top: 6rem;
+                color: white;
+                text-align: center;
+                width: 25vw;
+                p {
+                    background: $secondary-color;                
+                    font-size: 0.8rem;
+                    padding: 1rem;
+                }
+            }   
+        }
+        &.business-page {
+            .image-container {
                 img {
                     width: 22rem;
+                    margin-bottom: 0;                                        
                 }
             }
         }
-        .text-container {    
-            width: 60%;  
-            padding: 2rem 4rem;            
-            &.padding-zero {
-                padding: 0;
+        &.about {
+            .image-container {
+                img {
+                    width: 22rem;
+                    margin-bottom: 1rem;                                        
+                }
             }
-            h1 {
-                color: white;
-                text-shadow: 0.5px 0.5px #303030; 
-                
-            }
-            h4 {
-                color: $secondary-color;                
-            }
-        }
+        }      
         &.home {           
+            .text-container {
+                padding-top: 2rem;
+            }
             background: url("/assets/home-image.jpeg");        
             background-repeat: no-repeat;
             background-size: 100% 100%;  
             background-color: white;
-        }    
-        .business-case {
-            margin-top: 0;
-        }
-        
-        .goal, .business-case {
-            display: block;
-            width: 100%;
-            padding-left: 4rem;           
-            img{
-                float: right;
-                margin-right: 4rem;
-            }
-            span{
-                font-weight: bold;
-            }            
-        }
-
-        .highlight {
-            display: block;
-            margin-top: 6rem;
-            color: white;
-            text-align: center;
-            width: 25vw;
-            p {
-                background: $secondary-color;                
-                font-size: 0.8rem;
-                padding: 1rem;
-            }
-        }
+        }           
     }
     .btn-obsidian {
         padding: 0.4rem 1rem;
