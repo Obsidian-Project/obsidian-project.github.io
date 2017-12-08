@@ -42,7 +42,11 @@ h3 {
     font-size: 1.6rem;  
 }
 h4 {                      
-    font-size: 1.2rem;                       
+    font-size: 1.2rem;    
+    &.subtitle {
+        margin-bottom: 0.5rem;
+        color: $secondary-color;  
+    }                   
 }
 h5 {
     font-size: 1.2rem;
@@ -51,8 +55,9 @@ h5 {
 p {
     font-size: 1.2rem;
     margin: 0;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     font-weight: 100;
+    font-family: sans-serif;
 }
 hr {
     margin: 2rem 0;
@@ -110,8 +115,10 @@ footer {
         }        
     }
 } 
-.about .image-container img {
-    width: 20rem;    
+.about, .business-page {
+     .image-container img {
+        width: 20rem;    
+     }
 }
 section, footer {       
     &.content {
@@ -140,7 +147,7 @@ section, footer {
             font-weight: bold;
         }
     }
-    &.about {
+    &.about, &.business-page {
         .text-container { 
             h5 {
                 margin: 1rem 0;
@@ -213,11 +220,11 @@ button:focus {
             align-items: center;
             align-content: space-around;
         }
-        &.about {
+        &.about, &.business-page {
             height: auto;
             margin-bottom: 0;
             .text-container {
-                &:first-child {
+                &.padding20 {
                     padding-top: 2rem;
                 }
                 padding-bottom: 0;
