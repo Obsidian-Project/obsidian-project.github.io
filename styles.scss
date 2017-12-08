@@ -226,6 +226,7 @@ button:focus {
         flex-direction: row;
         align-content: space-between;
         &.content {
+            height: auto;
             display: flex;
             flex-direction: column;
             align-content: space-between;
