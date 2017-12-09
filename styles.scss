@@ -312,7 +312,10 @@ button:focus {
                 }
             }
         }      
-        &.home {           
+        &.home {     
+            h1, h4 {
+                margin-bottom: 1rem;
+            }      
             .text-container {
                 padding-top: 2rem;
             }
